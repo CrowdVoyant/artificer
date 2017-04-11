@@ -55,7 +55,11 @@ def Go_bots():
 	
 	# search through twitter by hastag
 	for hashtag in hashtags_array:
-		search_result_hashtag.append(api.search('#'+hashtag))
+		try:
+			search_result_hashtag.append(api.search('#'+hashtag))
+		except Exception as e:
+			print e
+			
 	all_tweets_text = []
 
 	return jsonify({"x": search_result_hashtag})
