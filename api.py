@@ -23,8 +23,11 @@ auth.set_access_token(access_tokenkey, access_tokensecret)
 
 api = tweepy.API(auth)
 
+@app.route('/test')
+def test():
+	return "Test"
 
-@app.route('/twitter/')
+@app.route('/twitter')
 def Go_bots():
 	args = request.args
 	article_links_array = args.getlist('article_links')
