@@ -52,13 +52,14 @@ def Go_bots():
 		except Exception as e:
 			print e
 
-	return jsonify({"x": search_result_article})
-
+	
 	# search through twitter by hastag
 	for hashtag in hashtags_array:
 		search_result_hashtag.append(api.search('#'+hashtag))
 	all_tweets_text = []
 
+	return jsonify({"x": search_result_hashtag})
+	
 	#takes the name of the users tha tweets the articles and contacts them
 	for tweets_a in search_result_article:
 		for t in tweets_a:
